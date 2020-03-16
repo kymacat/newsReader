@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		CF626C1E241994C700AE88E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C1D241994C700AE88E0 /* AppDelegate.swift */; };
-		CF626C20241994C700AE88E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C1F241994C700AE88E0 /* SceneDelegate.swift */; };
-		CF626C22241994C700AE88E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C21241994C700AE88E0 /* ViewController.swift */; };
 		CF626C25241994C700AE88E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF626C23241994C700AE88E0 /* Main.storyboard */; };
 		CF626C27241994C800AE88E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF626C26241994C800AE88E0 /* Assets.xcassets */; };
 		CF626C2A241994C800AE88E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF626C28241994C800AE88E0 /* LaunchScreen.storyboard */; };
+		CF626C322419962400AE88E0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C312419962400AE88E0 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF626C1A241994C700AE88E0 /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF626C1D241994C700AE88E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF626C1F241994C700AE88E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF626C21241994C700AE88E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF626C24241994C700AE88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF626C26241994C800AE88E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF626C29241994C800AE88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF626C2B241994C800AE88E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF626C312419962400AE88E0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				CF626C1D241994C700AE88E0 /* AppDelegate.swift */,
-				CF626C1F241994C700AE88E0 /* SceneDelegate.swift */,
-				CF626C21241994C700AE88E0 /* ViewController.swift */,
+				CF626C312419962400AE88E0 /* TableViewController.swift */,
 				CF626C23241994C700AE88E0 /* Main.storyboard */,
 				CF626C26241994C800AE88E0 /* Assets.xcassets */,
 				CF626C28241994C800AE88E0 /* LaunchScreen.storyboard */,
@@ -138,9 +135,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF626C22241994C700AE88E0 /* ViewController.swift in Sources */,
+				CF626C322419962400AE88E0 /* TableViewController.swift in Sources */,
 				CF626C1E241994C700AE88E0 /* AppDelegate.swift in Sources */,
-				CF626C20241994C700AE88E0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +283,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G62NMGFRS3;
 				INFOPLIST_FILE = NewsReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G62NMGFRS3;
 				INFOPLIST_FILE = NewsReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
