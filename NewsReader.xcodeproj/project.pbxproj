@@ -10,6 +10,11 @@
 		CF626C1E241994C700AE88E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C1D241994C700AE88E0 /* AppDelegate.swift */; };
 		CF626C27241994C800AE88E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF626C26241994C800AE88E0 /* Assets.xcassets */; };
 		CF626C322419962400AE88E0 /* AllNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C312419962400AE88E0 /* AllNewsController.swift */; };
+		CF778A7624200267002C36FD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF778A7524200267002C36FD /* Launch Screen.storyboard */; };
+		CF778A7A242008BB002C36FD /* ParseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF778A79242008BB002C36FD /* ParseOperation.swift */; };
+		CFD48D09241FDCDF003E2528 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD48D07241FDCDF003E2528 /* NewsCell.swift */; };
+		CFD48D0A241FDCDF003E2528 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD48D08241FDCDF003E2528 /* NewsCell.xib */; };
+		CFD48D0C241FDECF003E2528 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD48D0B241FDECF003E2528 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +23,11 @@
 		CF626C26241994C800AE88E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF626C2B241994C800AE88E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF626C312419962400AE88E0 /* AllNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsController.swift; sourceTree = "<group>"; };
+		CF778A7524200267002C36FD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CF778A79242008BB002C36FD /* ParseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseOperation.swift; sourceTree = "<group>"; };
+		CFD48D07241FDCDF003E2528 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		CFD48D08241FDCDF003E2528 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		CFD48D0B241FDECF003E2528 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,11 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				CF626C1D241994C700AE88E0 /* AppDelegate.swift */,
-				CF626C312419962400AE88E0 /* AllNewsController.swift */,
+				CFD48D0D241FE1AC003E2528 /* AllNews */,
+				CFD48D0B241FDECF003E2528 /* Models.swift */,
+				CF778A79242008BB002C36FD /* ParseOperation.swift */,
+				CF778A7524200267002C36FD /* Launch Screen.storyboard */,
 				CF626C26241994C800AE88E0 /* Assets.xcassets */,
 				CF626C2B241994C800AE88E0 /* Info.plist */,
 			);
 			path = NewsReader;
+			sourceTree = "<group>";
+		};
+		CFD48D0D241FE1AC003E2528 /* AllNews */ = {
+			isa = PBXGroup;
+			children = (
+				CF626C312419962400AE88E0 /* AllNewsController.swift */,
+				CFD48D07241FDCDF003E2528 /* NewsCell.swift */,
+				CFD48D08241FDCDF003E2528 /* NewsCell.xib */,
+			);
+			path = AllNews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +139,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF778A7624200267002C36FD /* Launch Screen.storyboard in Resources */,
+				CFD48D0A241FDCDF003E2528 /* NewsCell.xib in Resources */,
 				CF626C27241994C800AE88E0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF626C322419962400AE88E0 /* AllNewsController.swift in Sources */,
+				CFD48D09241FDCDF003E2528 /* NewsCell.swift in Sources */,
 				CF626C1E241994C700AE88E0 /* AppDelegate.swift in Sources */,
+				CFD48D0C241FDECF003E2528 /* Models.swift in Sources */,
+				CF778A7A242008BB002C36FD /* ParseOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
