@@ -8,12 +8,17 @@
 
 import UIKit
 
-class TableViewController: UITableViewController, XMLParserDelegate {
+class AllNewsController: UITableViewController, XMLParserDelegate {
     
     var parser = XMLParser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
         
         parser = XMLParser(contentsOf:(NSURL(string:"http://www.vesti.ru/vesti.rss")! as URL))!
         parser.delegate = self

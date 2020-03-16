@@ -8,20 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		CF626C1E241994C700AE88E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C1D241994C700AE88E0 /* AppDelegate.swift */; };
-		CF626C25241994C700AE88E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF626C23241994C700AE88E0 /* Main.storyboard */; };
 		CF626C27241994C800AE88E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF626C26241994C800AE88E0 /* Assets.xcassets */; };
-		CF626C2A241994C800AE88E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF626C28241994C800AE88E0 /* LaunchScreen.storyboard */; };
-		CF626C322419962400AE88E0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C312419962400AE88E0 /* TableViewController.swift */; };
+		CF626C322419962400AE88E0 /* AllNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C312419962400AE88E0 /* AllNewsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF626C1A241994C700AE88E0 /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF626C1D241994C700AE88E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF626C24241994C700AE88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF626C26241994C800AE88E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CF626C29241994C800AE88E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF626C2B241994C800AE88E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF626C312419962400AE88E0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		CF626C312419962400AE88E0 /* AllNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +51,8 @@
 			isa = PBXGroup;
 			children = (
 				CF626C1D241994C700AE88E0 /* AppDelegate.swift */,
-				CF626C312419962400AE88E0 /* TableViewController.swift */,
-				CF626C23241994C700AE88E0 /* Main.storyboard */,
+				CF626C312419962400AE88E0 /* AllNewsController.swift */,
 				CF626C26241994C800AE88E0 /* Assets.xcassets */,
-				CF626C28241994C800AE88E0 /* LaunchScreen.storyboard */,
 				CF626C2B241994C800AE88E0 /* Info.plist */,
 			);
 			path = NewsReader;
@@ -122,9 +116,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF626C2A241994C800AE88E0 /* LaunchScreen.storyboard in Resources */,
 				CF626C27241994C800AE88E0 /* Assets.xcassets in Resources */,
-				CF626C25241994C700AE88E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,31 +127,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF626C322419962400AE88E0 /* TableViewController.swift in Sources */,
+				CF626C322419962400AE88E0 /* AllNewsController.swift in Sources */,
 				CF626C1E241994C700AE88E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CF626C23241994C700AE88E0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF626C24241994C700AE88E0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CF626C28241994C800AE88E0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF626C29241994C800AE88E0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CF626C2C241994C800AE88E0 /* Debug */ = {
