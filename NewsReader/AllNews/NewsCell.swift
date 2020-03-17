@@ -14,9 +14,11 @@ class NewsCell: UITableViewCell, ConfigurableView {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var newsLabel: UILabel!
     
+    var category: String!
+    
     func configure(with model: NewsCellModel) {
         newsLabel.text = model.title
-        
+        category = model.category
                         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.init(identifier: "en_US_POSIX")

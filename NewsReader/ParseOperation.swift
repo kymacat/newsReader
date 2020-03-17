@@ -43,6 +43,7 @@ class Parser {
                     if let newData = self?.parserController.updatedNews {
                         self?.parserController.news = newData
                     }
+                    self?.parserController.updateDataForCategory()
                     self?.parserController.tableView.reloadData()
                     self?.parserController.tableView.refreshControl?.endRefreshing()
                     self?.isFinished = true

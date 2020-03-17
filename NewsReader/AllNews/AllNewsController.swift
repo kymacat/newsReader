@@ -13,18 +13,23 @@ class AllNewsController: UITableViewController {
     fileprivate let reuseIdentifier = String(describing: NewsCell.self)
     
     // MARK: - Data
-    var currElement: String?
-    var currNews: NewsCellModel?
+    private var currElement: String?
+    private var currNews: NewsCellModel?
     
     var news: [NewsCellModel] = []
     var updatedNews: [NewsCellModel] = []
+    var newsForCategory: [NewsCellModel] = []
+    
+    
+    private var categoryFlag = false
+    private var currCategory = String()
+    private var categories = Set<String>()
     
     var parser = XMLParser()
-    var parseOperation: Parser?
+    private var parseOperation: Parser?
     
     let myRefreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Обновление")
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         return refreshControl
     }()
@@ -45,38 +50,87 @@ class AllNewsController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
 
-        
+        myRefreshControl.beginRefreshing()
         parseOperation = Parser(self)
         if let operation = parseOperation {
             operation.parse()
         }
         
     }
-
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return news.count
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? NewsCell else { return UITableViewCell() }
-
-        cell.configure(with: news[indexPath.row])
-
-        return cell
-    }
     
     // MARK: - Frontend
     
     @objc func showCategories(sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        for category in categories {
+            let categoryAction = UIAlertAction(title: category, style: .default) { [weak self] (action: UIAlertAction) in
+                if let VC = self {
+                    VC.categoryFlag = true
+                    VC.currCategory = category
+                    VC.updateDataForCategory()
+                    VC.tableView.reloadData()
+                    VC.navigationItem.rightBarButtonItem?.title = category
+                }
+            }
+            alert.addAction(categoryAction)
+        }
+        
+        let action = UIAlertAction(title: "Все", style: .default) { [weak self] (action: UIAlertAction) in
+            self?.categoryFlag = false
+            self?.tableView.reloadData()
+            self?.navigationItem.rightBarButtonItem?.title = "Категории"
+            
+        }
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     @objc func refresh(sender: UIRefreshControl) {
         if let operation = parseOperation {
             operation.parse()
         }
+    }
+    
+    func updateDataForCategory() {
+        newsForCategory.removeAll()
+        for news in self.news {
+            if news.category == currCategory {
+                newsForCategory.append(news)
+            }
+        }
+    }
+}
+
+
+// MARK: - Table view data source
+extension AllNewsController {
+    
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if !categoryFlag {
+            return news.count
+        } else {
+            return newsForCategory.count
+        }
+        
+    }
+
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? NewsCell else { return UITableViewCell() }
+
+        if !categoryFlag {
+            cell.configure(with: news[indexPath.row])
+        } else {
+            cell.configure(with: newsForCategory[indexPath.row])
+        }
+        
+
+        return cell
     }
 }
     
@@ -91,7 +145,7 @@ extension AllNewsController : XMLParserDelegate {
         currElement = elementName
         
         if elementName == "item" {
-            currNews = NewsCellModel(title: "", date: "")
+            currNews = NewsCellModel(title: "", date: "", category: "")
         }
     }
 
@@ -100,6 +154,7 @@ extension AllNewsController : XMLParserDelegate {
         if elementName == "item" {
             if let news = currNews {
                 self.updatedNews.append(news)
+                self.categories.insert(news.category)
             }
             currNews = nil
         }
@@ -110,12 +165,17 @@ extension AllNewsController : XMLParserDelegate {
         
         if currNews != nil {
             
+            
             if currElement == "title" {
                 currNews!.title += data
             }
             if currElement == "pubDate" {
                 currNews!.date += data
             }
+            if currElement == "category" {
+                currNews!.category += data
+            }
+            
         }
         
     }

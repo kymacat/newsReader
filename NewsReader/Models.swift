@@ -17,4 +17,5 @@ protocol ConfigurableView {
 struct NewsCellModel {
     var title: String
     var date: String
+    var category: String
 }
