@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         navigationController = UINavigationController(rootViewController: AllNewsController())
+        navigationController?.navigationBar.tintColor = .black
         window?.rootViewController = navigationController
         
         return true

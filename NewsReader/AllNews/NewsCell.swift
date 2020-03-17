@@ -15,10 +15,14 @@ class NewsCell: UITableViewCell, ConfigurableView {
     @IBOutlet weak var newsLabel: UILabel!
     
     var category: String!
+    var fullText: String!
+    var imageUrl: String?
     
-    func configure(with model: NewsCellModel) {
+    func configure(with model: NewsModel) {
         newsLabel.text = model.title
         category = model.category
+        fullText = model.fullText
+        imageUrl = model.imageUrl
                         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.init(identifier: "en_US_POSIX")

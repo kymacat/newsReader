@@ -14,11 +14,11 @@ class AllNewsController: UITableViewController {
     
     // MARK: - Data
     private var currElement: String?
-    private var currNews: NewsCellModel?
+    private var currNews: NewsModel?
     
-    var news: [NewsCellModel] = []
-    var updatedNews: [NewsCellModel] = []
-    var newsForCategory: [NewsCellModel] = []
+    var news: [NewsModel] = []
+    var updatedNews: [NewsModel] = []
+    var newsForCategory: [NewsModel] = []
     
     
     private var categoryFlag = false
@@ -132,6 +132,18 @@ extension AllNewsController {
 
         return cell
     }
+    
+    // MARK: - Navigation
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? NewsCell,
+            let title = cell.newsLabel.text else { return }
+        
+        let viewController = NewsViewController(newsTitle: title, fullText: cell.fullText, imageUrl: cell.imageUrl)
+        viewController.view.backgroundColor = .white
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }
     
 
@@ -145,7 +157,11 @@ extension AllNewsController : XMLParserDelegate {
         currElement = elementName
         
         if elementName == "item" {
-            currNews = NewsCellModel(title: "", date: "", category: "")
+            currNews = NewsModel(title: "", date: "", category: "", fullText: "")
+        }
+        
+        if elementName == "enclosure" {
+            currNews?.imageUrl = attributeDict["url"]
         }
     }
 
@@ -167,13 +183,17 @@ extension AllNewsController : XMLParserDelegate {
             
             
             if currElement == "title" {
-                currNews!.title += data
+                currNews?.title += data
             }
             if currElement == "pubDate" {
-                currNews!.date += data
+                currNews?.date += data
             }
             if currElement == "category" {
-                currNews!.category += data
+                currNews?.category += data
+            }
+            
+            if currElement == "yandex:full-text" {
+                currNews?.fullText += data
             }
             
         }

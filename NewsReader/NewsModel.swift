@@ -14,8 +14,10 @@ protocol ConfigurableView {
     func configure(with model: ConfigurationModel)
 }
 
-struct NewsCellModel {
+struct NewsModel {
     var title: String
     var date: String
     var category: String
+    var imageUrl: String?
+    var fullText: String
 }
