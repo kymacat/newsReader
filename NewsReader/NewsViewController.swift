@@ -81,7 +81,7 @@ class NewsViewController: UIViewController {
                 newsImage!.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
                 newsImage!.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
                newsImage!.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-               newsImage!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+               newsImage!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.87),
                newsImage!.heightAnchor.constraint(equalTo: newsImage!.widthAnchor, multiplier: 0.5)
             ])
             
@@ -130,7 +130,7 @@ class NewsViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-            titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+            titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.87)
         ])
         
         // MARK: fullTextLabel
@@ -153,7 +153,7 @@ class NewsViewController: UIViewController {
             fullTextLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
             fullTextLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
             fullTextLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -10),
-            fullTextLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+            fullTextLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.87)
         ])
         
         
