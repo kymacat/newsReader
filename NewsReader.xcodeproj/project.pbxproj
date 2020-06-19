@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF1190A924215949009D1027 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1190A824215949009D1027 /* NewsViewController.swift */; };
+		CF4B5D08249D692800D43F6F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CF4B5D07249D692800D43F6F /* README.md */; };
 		CF626C1E241994C700AE88E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C1D241994C700AE88E0 /* AppDelegate.swift */; };
 		CF626C27241994C800AE88E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF626C26241994C800AE88E0 /* Assets.xcassets */; };
 		CF626C322419962400AE88E0 /* AllNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF626C312419962400AE88E0 /* AllNewsController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		CF1190A824215949009D1027 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		CF4B5D07249D692800D43F6F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CF626C1A241994C700AE88E0 /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF626C1D241994C700AE88E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF626C26241994C800AE88E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		CF626C11241994C700AE88E0 = {
 			isa = PBXGroup;
 			children = (
+				CF4B5D07249D692800D43F6F /* README.md */,
 				CF626C1C241994C700AE88E0 /* NewsReader */,
 				CF626C1B241994C700AE88E0 /* Products */,
 			);
@@ -144,6 +147,7 @@
 			files = (
 				CF778A7624200267002C36FD /* Launch Screen.storyboard in Resources */,
 				CFD48D0A241FDCDF003E2528 /* NewsCell.xib in Resources */,
+				CF4B5D08249D692800D43F6F /* README.md in Resources */,
 				CF626C27241994C800AE88E0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
